@@ -2,6 +2,7 @@ package com.example.se2lab.benutzer.dataaccess.api.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,7 +15,9 @@ public class Benutzer {
     private String name;
     @NotNull
     private String passwort;
-    @NotNull
+
+    @GeneratedValue
+    @Id
     private Long id;
 
     public Benutzer(){
@@ -54,7 +57,6 @@ public class Benutzer {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }
