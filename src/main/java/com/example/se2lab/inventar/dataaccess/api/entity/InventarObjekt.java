@@ -5,7 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 @Entity
 public class InventarObjekt {
-    @NotNull
+
+    @Id
     private Long id;
 
     @NotNull
@@ -13,7 +14,7 @@ public class InventarObjekt {
 
     @NotNull
     @Column(unique = true)
-    private int qrCode;
+    private String qrCode;
 
     @NotNull
     private int anzahl;
@@ -24,8 +25,8 @@ public class InventarObjekt {
     private boolean adminzugriff;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Name")
+    @ManyToOne
+    @JoinColumn(name = "kategoriename")
     private Kategorie kategorie;
 
     public String getName() {
@@ -36,11 +37,11 @@ public class InventarObjekt {
         this.name = name;
     }
 
-    public int getQrCode() {
+    public String getQrCode() {
         return qrCode;
     }
 
-    public void setQrCode(int qrCode) {
+    public void setQrCode(String qrCode) {
         this.qrCode = qrCode;
     }
 
@@ -80,7 +81,6 @@ public class InventarObjekt {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }
