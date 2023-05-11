@@ -5,7 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 @Entity
 public class InventarObjekt {
-    @NotNull
+
+    @Id
     private Long id;
 
     @NotNull
@@ -24,8 +25,8 @@ public class InventarObjekt {
     private boolean adminzugriff;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Name")
+    @ManyToOne
+    @JoinColumn(name = "kategoriename")
     private Kategorie kategorie;
 
     public String getName() {
@@ -80,7 +81,6 @@ public class InventarObjekt {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }
