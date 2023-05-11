@@ -8,21 +8,17 @@ public class BenutzerUseCaseImpl {
     @Autowired
     private BenutzerRepository benutzerRepository;
 
-
-    @Override
     public Benutzer createUser(String name, String passwort, boolean isAdmin) {
         Benutzer benutzer = new Benutzer(name,passwort,isAdmin);
 
         return benutzerRepository.save(benutzer);
     }
 
-    @Override
     public Benutzer findUserById(Long id) throws Exception {
-        return benutzerRepository.findById(id).orElseThrow(() -> new Exception;
+        return benutzerRepository.findById(id).orElseThrow(() -> new Exception());
     }
 
-    @Override
-    public void deleteUser(Long id) {
+    public void deleteUser(Long id) throws Exception {
         Benutzer benutzer = findUserById(id);
         benutzerRepository.delete(benutzer);
     }

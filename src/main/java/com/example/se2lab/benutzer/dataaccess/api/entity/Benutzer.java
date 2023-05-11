@@ -1,30 +1,22 @@
 package com.example.se2lab.benutzer.dataaccess.api.entity;
 
-import com.example.se2lab.inventar.dataaccess.api.repo.InventarRepository;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import org.jetbrains.annotations.NotNull;
-
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Benutzer {
-    @Id
-    @GeneratedValue
-
-    private Long id;
     @NotNull
     private boolean isAdmin;
     @NotNull
+    @Column(unique = true)
     private String name;
     @NotNull
     private String passwort;
+    @NotNull
+    private Long id;
 
-    @OneToOne
-
-    private InventarRepository inventar;
     public Benutzer(){
 
     }
@@ -34,18 +26,37 @@ public class Benutzer {
         this.isAdmin=isAdmin;
     }
 
+    public boolean isAdmin() {
+        return isAdmin;
+    }
 
-    public boolean getIsAdmin(){
-        return false;
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getPasswort() {
         return passwort;
     }
 
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Id
+    public Long getId() {
+        return id;
+    }
 }
 

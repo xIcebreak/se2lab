@@ -1,4 +1,6 @@
 package com.example.se2lab.inventar.dataaccess.api.repo;
 
-public interface InventarObjektRepository extends JpaRepository<InventarRepository,Long> {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface InventarObjektRepository extends JpaRepository<InventarObjektRepository,Long> {
 }
