@@ -25,7 +25,6 @@ public class InventarObjekt {
     @NotNull
     private boolean adminzugriff;
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "kategoriename")
     private Kategorie kategorie;
