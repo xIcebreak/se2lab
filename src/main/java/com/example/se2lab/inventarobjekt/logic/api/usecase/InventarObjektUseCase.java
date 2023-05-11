@@ -8,12 +8,14 @@ public interface InventarObjektUseCase {
 
     List<InventarObjekt> findAllInventarObjekte();
 
-    void addInventarObjekt();
+    void addInventarObjekt(InventarObjekt inventarObjekt);
 
-    void deleteInventarObjekt();
+    void deleteInventarObjekt(long Id);
 
     int sizeOfInventar();
 
-    void editInventarObject();
+    void editInventarObjectName(long id, String name);
+
+    void editInventarObjectAnzahl(long id, int anzahl);
 
 }

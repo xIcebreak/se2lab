@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 @Entity
 public class InventarObjekt {
 
+    @GeneratedValue
     @Id
     private Long id;
 

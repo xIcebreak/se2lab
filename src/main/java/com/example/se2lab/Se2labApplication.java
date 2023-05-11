@@ -30,7 +30,6 @@ public class Se2labApplication {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
 }
