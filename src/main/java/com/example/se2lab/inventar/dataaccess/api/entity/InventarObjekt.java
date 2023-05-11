@@ -14,7 +14,7 @@ public class InventarObjekt {
 
     @NotNull
     @Column(unique = true)
-    private int qrCode;
+    private String qrCode;
 
     @NotNull
     private int anzahl;
@@ -37,11 +37,11 @@ public class InventarObjekt {
         this.name = name;
     }
 
-    public int getQrCode() {
+    public String getQrCode() {
         return qrCode;
     }
 
-    public void setQrCode(int qrCode) {
+    public void setQrCode(String qrCode) {
         this.qrCode = qrCode;
     }
 
